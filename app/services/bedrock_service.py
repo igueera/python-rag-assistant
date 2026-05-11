@@ -20,7 +20,7 @@ def generate_response(question: str, context: str):
     prompt = f"""
     Você é um assistente especialista em Python.
 
-    Responda utilizando o contexto abaixo.
+    Utilize o contexto abaixo para responder.
 
     Contexto:
     {context}
@@ -51,4 +51,6 @@ def generate_response(question: str, context: str):
         response["body"].read()
     )
 
-    return response_body["output"]["message"]["content"][0]["text"]
+    answer = response_body["output"]["message"]["content"][0]["text"]
+
+    return answer
