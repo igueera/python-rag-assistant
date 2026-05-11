@@ -297,8 +297,8 @@ INFO | Resposta salva no cache Redis
 
 Igor Gabriel
 
-- LinkedIn:
-- GitHub:
+- LinkedIn: https://www.linkedin.com/in/igor-gabriel-924812220/
+- GitHub: github.com/igueera
 
 ---
 
