@@ -2,10 +2,10 @@ from fastapi import APIRouter
 
 from app.models.schemas import QuestionRequest
 from app.services.rag_service import search
+from app.services.bedrock_service import generate_response
 
 router = APIRouter()
 
-# Busca chunks semanticamente relevantes
 @router.post("/ask")
 def ask_question(request: QuestionRequest):
 
@@ -13,7 +13,12 @@ def ask_question(request: QuestionRequest):
 
     context = "\n".join(results)
 
+    answer = generate_response(
+        request.question,
+        context
+    )
+
     return {
         "question": request.question,
-        "context": context
+        "answer": answer
     }
